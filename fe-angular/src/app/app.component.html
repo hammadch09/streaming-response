@@ -1,0 +1,72 @@
+<div class="container-fluid">
+    <div class="row clearfix">
+        <div class="col-lg-12">
+            <div class="card chat-app">
+                <div class="chat">
+                    <!-- Header Content -->
+                    <div class="chat-header clearfix">
+                        <div class="row">
+                            <div
+                                class="col-lg-12 d-flex justify-content-center"
+                            >
+                                <a data-toggle="modal" data-target="#view_info">
+                                    <img
+                                        src="../assets/images/antematter.png"
+                                        alt="Antematter"
+                                    />
+                                </a>
+                                <div class="chat-about">
+                                    <h3 class="m-b-0">
+                                        Full-Stack Developer — Recruitment
+                                        Challenge
+                                    </h3>
+                                    <small class="float-right"
+                                        >ANTEMATTER</small
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Header Content -->
+
+                    <!-- Body Content -->
+                    <div class="chat-history">
+                        <ul class="m-b-0">
+                            <li class="clearfix">
+                                <div
+                                    class="message my-message"
+                                    *ngIf="answer.length"
+                                >
+                                    <span *ngFor="let stream of answer"
+                                        >{{ stream }} &nbsp;</span
+                                    >
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Body Content -->
+
+                    <!-- Select Option Start -->
+                    <div class="chat-message clearfix">
+                        <div class="input-group mb-0">
+                            <select
+                                class="form-control form-select"
+                                aria-label="Default select example"
+                                (change)="onSelectQuestion($event)"
+                            >
+                                <option selected>Select Question</option>
+                                <option
+                                    *ngFor="let question of questions"
+                                    value="{{ question.id }}"
+                                >
+                                    {{ question.text }}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- Select Option Start -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
